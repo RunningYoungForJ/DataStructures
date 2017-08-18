@@ -1,3 +1,5 @@
+package Algorithms;
+
 /**
  * Created by yangkun on 2017/8/18.
  */
@@ -6,7 +8,7 @@ public class SortingAndSearching {
         int[] sortedArray = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
         int[] unsortedArray = {3, 2, 5, 6, 4, 1, 8, 9, 0, 7};
 
-        //验证二分查找
+        //验证二分查找法
         int searchKey = 5;
         BinarySearch binarySearch = new BinarySearch();
         System.out.println(binarySearch.find(sortedArray, searchKey));
