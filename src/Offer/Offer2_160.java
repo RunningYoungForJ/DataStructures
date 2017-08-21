@@ -11,7 +11,7 @@ public class Offer2_160 {
         int[] rsa2 = {4, 4, 4, 5, 6, 7, 0, 1, 2};
         int[] rsa3 = {0, 1, 2, 3, 4, 5, 6, 7};
         int[] rsa4 = {4, 4, 4, 4, 4, 4, 4, 4};
-        Solution solution = new Solution();
+        Solution160 solution = new Solution160();
         System.out.println(solution.findMin(rsa2));
 
 
@@ -22,7 +22,7 @@ public class Offer2_160 {
  * getSplitIndex：找到旋转排序数组中，两段局部有序子数组的分界点，即是最小元素的下标位置。时间复杂度：O（n），可以使用二分查找优化
  * findMin：调用getSplitIndex方法找到最小元素的下标位置，然后输出该位置的元素值
  */
-class Solution {
+class Solution160 {
     public int getSplitIndex(int[] arr) {
         for (int i = 0; i < arr.length - 1; i++) {
             if (arr[i + 1] < arr[i]) {
