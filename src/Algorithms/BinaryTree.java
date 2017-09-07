@@ -36,7 +36,7 @@ public class BinaryTree {
 }
 
 class Tree {
-    private Node root;
+    private TreeNode root;
 
     public Tree() {
     }
@@ -56,7 +56,7 @@ class Tree {
      * 如果newNode大于当前node，则newNode插入当前node的右子树，反之，插入左子树。
      */
     public void insert(int value) {
-        Node newNode = new Node();
+        TreeNode newNode = new TreeNode();
         newNode.setValue(value);
         newNode.setLeft(null);
         ;
@@ -66,7 +66,7 @@ class Tree {
             root = newNode;
             return;
         } else {
-            Node cur = root;
+            TreeNode cur = root;
             while (true) {
                 if (value > cur.getValue()) {
                     if (cur.getRight() != null) {
@@ -122,7 +122,7 @@ class Tree {
      * 非递归的前序、中序、后序遍历二叉树
      */
     //前序遍历：先输出根结点，然后依次遍历当前结点左子树和右子树
-    public void preOrder(Node cur) {
+    public void preOrder(TreeNode cur) {
         System.out.print(cur.getValue() + " ");
         if (cur.getLeft() != null) {
             preOrder(cur.getLeft());
@@ -133,7 +133,7 @@ class Tree {
     }
 
     //中序遍历：先遍历当前结点的左子树，再输出当前结点，最后遍历当前结点的右子树
-    public void inOrder(Node cur) {
+    public void inOrder(TreeNode cur) {
         if (cur.getLeft() != null) {
             inOrder(cur.getLeft());
         }
@@ -144,7 +144,7 @@ class Tree {
     }
 
     //后序遍历：先遍历当前结点的左子树，再遍历右子树，最后输出当前结点
-    public void postOrder(Node cur) {
+    public void postOrder(TreeNode cur) {
         if (cur.getLeft() != null) {
             postOrder(cur.getLeft());
         }
@@ -177,8 +177,8 @@ class Tree {
     }*/
 
     //中序遍历二叉树
-    public ArrayList<Integer> inOrderWithoutRecursion(Node cur) {
-        Stack<Node> stack = new Stack<>();
+    public ArrayList<Integer> inOrderWithoutRecursion(TreeNode cur) {
+        Stack<TreeNode> stack = new Stack<>();
         ArrayList<Integer> values = new ArrayList<>();
         while (!stack.isEmpty() || cur != null) {
             while (cur != null) {
@@ -207,19 +207,19 @@ class Tree {
         this.root = createTreeByInorderAndPostOrder(inList, postList);
     }
 
-    public Node createTreeByInorderAndPostOrder(ArrayList<Integer> inorder, ArrayList<Integer> postorder) {
+    public TreeNode createTreeByInorderAndPostOrder(ArrayList<Integer> inorder, ArrayList<Integer> postorder) {
         ArrayList<Integer> inLeft = new ArrayList<>();
         ArrayList<Integer> inRight = new ArrayList<>();
         ArrayList<Integer> postLeft = new ArrayList<>();
         ArrayList<Integer> postRight = new ArrayList<>();
 
-        Node root=null;
+        TreeNode root=null;
 
         int splitIndex = 0;
 
         if (inorder.size()!=0 || postorder.size() != 0) {
 
-            root = new Node();
+            root = new TreeNode();
             root.setValue(postorder.get(postorder.size()-1));
 
             for (int i = 0; i < inorder.size(); i++) {
@@ -246,15 +246,15 @@ class Tree {
     }
 }
 
-class Node {
+class TreeNode {
     private int value;
-    private Node left;
-    private Node right;
+    private TreeNode left;
+    private TreeNode right;
 
-    public Node() {
+    public TreeNode() {
     }
 
-    public Node(int value, Node left, Node right) {
+    public TreeNode(int value, TreeNode left, TreeNode right) {
         this.value = value;
         this.left = left;
         this.right = right;
@@ -268,19 +268,19 @@ class Node {
         this.value = value;
     }
 
-    public Node getLeft() {
+    public TreeNode getLeft() {
         return left;
     }
 
-    public void setLeft(Node left) {
+    public void setLeft(TreeNode left) {
         this.left = left;
     }
 
-    public Node getRight() {
+    public TreeNode getRight() {
         return right;
     }
 
-    public void setRight(Node right) {
+    public void setRight(TreeNode right) {
         this.right = right;
     }
 }
