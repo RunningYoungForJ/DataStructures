@@ -2,9 +2,9 @@ package CrackingTheCode;
 
 import java.util.Arrays;
 
-public class Chapter8 {
+public class Chapter8_1 {
     public static void main(String args[]) {
-        Chapter8 solution = new Chapter8();
+        Chapter8_1 solution = new Chapter8_1();
 
         String str811 = "abdcfergtisdpk";
         solution.solution811(str811);
